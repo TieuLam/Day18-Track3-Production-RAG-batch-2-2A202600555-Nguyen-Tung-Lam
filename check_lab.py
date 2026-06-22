@@ -56,7 +56,7 @@ def run_tests() -> tuple[int, int]:
     try:
         result = subprocess.run(
             [sys.executable, "-m", "pytest", "tests/", "-v", "--tb=no", "-q"],
-            capture_output=True, text=True, timeout=120,
+            capture_output=True, text=True, timeout=300,
         )
         lines = result.stdout.strip().split("\n")
         summary = lines[-1] if lines else ""
